@@ -6,8 +6,9 @@
     <link rel='stylesheet' href='../styles/style.css'>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
     <title>Article News Evaluation with NLP</title>
   </head>
   <body>
@@ -18,11 +19,46 @@
     </header>
       <form class="form">
         <label for="anText" id="lab">Enter your text</label>
-        <textarea id="anText" name="analizedText" rows="4" cols="15">Right here</textarea>
-        <button id="send" type="button">Submit</button>
+        <textarea id="anText" class="utext" name="analizedText" rows="4" cols="15" placeholder="Right here"></textarea>
+        <button id="send" type="button">Submit</button> 
+        <!-- button czeka na: It can have client-side scripts listen to the element's events, which are triggered when the events occur.   -->
       </form>
-      <section id="answer">
+      <section class="answer">
+          <p id="labelUsInput" >User input:</p>
+          <div id="userSentence"></div>
+          <p id="labelScoreTag">Score:</p>
+          <div id="score"></div>
+          <p id="labelAgreem">Agreement:</p>
+        <div id="agreement"></div>
       </section>
+      <section id='loading'>
+      </section>
+      <section id="errorMsg"></section>
+      <section class='legend'>
+        <h3 id='howTo' >How to understand the result:</h3>
+          <dt id='sco'>Score - polarity of the analysed text</dt>
+            <ul>
+              <li id='values'>Possible values:</li>
+              <li>P+ - strong positive</li>
+              <li>P - positive</li>
+              <li>NEU - neutral</li>
+              <li>N - negative</li>
+              <li>N+ - strong negative</li>
+              <li>NONE: without polarity</li>
+            </ul>
+          <dt id='agree'>Agreement - marks the agreement between the sentiments detected in the text.</dt>
+          <ul>
+            <li id='posibValues'>Possible values:</li>
+            <li>AGREEMENT - the different elements have the same polarity.</li>
+            <li>DISAGREEMENT - there is disagreement between the different elements' polarity.</li>
+          </ul>
+      </section>
+
+      <footer>
+        <p>&copy; shauvia</p>
+      </footer>
+      <script src="../c_index.js"></script>
+      <!-- zmienic powiązanie -->
     
 
   </body>

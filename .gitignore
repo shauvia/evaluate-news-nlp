@@ -151,5 +151,12 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Dependency directories
+node_modules/ 
+# będzie ignorować wszystkie katalogi node_modules gdziekolwiek one w katalogu projektu są, ale jakby były zapisane /node_modules to znaczy, że ścieżka dostepu jest w głównym katalogu projektu (root) i tylko tamten będzie ignorować. Natomiast jeśli znajdzie się ten katalog w innym katalogu, to nie zostanie zignorowany. 
+
+# webpack distibution folder
+dist/
+
 
 # End of https://www.gitignore.io/api/node,linux,macos,windows,visualstudiocode
