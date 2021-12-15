@@ -4,7 +4,9 @@
   "description": "Project finishing udacity front end developer nanodegree program",
   "main": "index.js",
   "scripts": {
-    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
+    "start": "node src/server/index_serv.js",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "node-fetch": "2.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.9.1"
   }
 }
