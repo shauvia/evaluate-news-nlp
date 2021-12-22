@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const fetch = require('node-fetch');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
 app.use(bodyParser.urlencoded( {extended: false} ));
@@ -23,7 +25,7 @@ function listening(){
 }
 
 const baseURL = "https://api.meaningcloud.com/sentiment-2.1?txt=";
-const apiKey = "&key=";
+const apiKey = process.env.API_KEY;
 const lang = "&lang=auto";
 
 async function getAnalysis(baseURL,userInput, apiKey, lang){
