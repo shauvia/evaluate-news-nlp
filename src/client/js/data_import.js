@@ -1,5 +1,15 @@
+function checkResponseOk(response) {
+  if (!response.ok){
+    if (response.status == 566){
+      throw new Error("The server api.meaningcloud.com cannot handle this request at this time.");
+    } else{
+      throw new Error(response.statusText);
+    }
+  }
+};
+
 async function getAllData(url, uInput) {
-  // Wrapping string in an object sis needed when express body-pareser runs with srtrict=true
+  // Wrapping string in an object sis needed when express body-pareser runs with strict=true
   let inputWrapper = { txt: uInput };
   console.log("Strigified: " + JSON.stringify(inputWrapper));
   let response = await fetch(url, { 
@@ -10,13 +20,9 @@ async function getAllData(url, uInput) {
     }
   }); // domyslnie zapytanie GET
   console.log("Fetch returned:", response);
-  if (!response.ok){
-    if (response.status == 566){
-      throw new Error("The server api.meaningcloud.com cannot handle this request at this time.");
-    } else{
-      throw new Error(response.statusText);
-    }
-  }
+
+  checkResponseOk(response);
+
   let content = await response.json(); // dobranie sie do tresci jest asynchroniczne, trzeba czekac; .json() oddżejsonowuje
   console.log('content', content);
   return content;
@@ -25,3 +31,5 @@ async function getAllData(url, uInput) {
 }
 
 export { getAllData };
+
+module.exports = checkResponseOk;

@@ -57,3 +57,5 @@ function initializeForms() {
 }
 
 export {initializeForms};
+
+module.exports = initializeForms;
