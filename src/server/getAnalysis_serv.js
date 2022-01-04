@@ -21,8 +21,4 @@ async function getAnalysis(userInput){
   return analysis;
 }
 
-
-
-export {getAnalysis};
-
 module.exports = getAnalysis; // tu module.exports - esportowanie funkcji do testowania;

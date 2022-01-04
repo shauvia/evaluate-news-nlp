@@ -1,4 +1,4 @@
-import { getAnalysis } from './getAnlysis_serv.js';
+const getAnalysis = require('./getAnalysis_serv.js');
 
 const express = require('express');
 const bodyParser = require('body-parser');

@@ -31,5 +31,3 @@ async function getAllData(url, uInput) {
 }
 
 export { getAllData };
-
-module.exports = checkResponseOk;
