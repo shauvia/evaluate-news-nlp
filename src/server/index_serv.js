@@ -24,15 +24,10 @@ function listening(){
   console.log(`runnning on localhost ${port}`);
 }
 
-function fixedEncodeURI(str) {
-  return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']'); //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI fixes issues with apostrophe in path
-}
-
 app.post("/analysedText", async function(req, res){
   console.log("serv-req.body", req.body);
   try{
-    const fixedInput = fixedEncodeURI(req.body);
-    let analysis = await getAnalysis(fixedInput);
+    let analysis = await getAnalysis(req.body);
     console.log("post-Analysis", analysis);
     res.send(analysis);
   }catch(error){
