@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const baseURL = "https://api.meaningcloud.com/sentiment-2.1?txt=";
-const apiKey = process.env.API_KEY;
+const apiKey = "&key=" + process.env.API_KEY;
 const lang = "&lang=auto";
 
 async function getAnalysis(userInput){

@@ -11,6 +11,13 @@ h1{
   text-align: center;
 }
 
+section h3{
+  margin-top: 2em;
+  font-size: 1.5em;
+  text-align: center;
+  color:rgb(69, 87, 86);
+}
+
 .form {
   border: 1px solid rgb(112, 38, 50);
   display: grid;
@@ -47,11 +54,8 @@ h1{
 #send{
   grid-area: butSub;
   font-size: 1.7em;
-  /* background-color: rgb(228, 142, 67); */
   background-color: rgb(1, 150, 140);
   color: rgb(247, 236, 181);
-  /* font-family: 'Cairo', sans-serif; */
-  /* font-family: 'Cinzel', serif; */
   font-family: 'Megrim', cursive;
   font-weight: 700;
   margin-top: 4vh;
@@ -200,5 +204,3 @@ footer {
   font-size: 1.5em;
 }
 
-
-/* złapać id loading i wystylizować wiadomość o błędzie. */
